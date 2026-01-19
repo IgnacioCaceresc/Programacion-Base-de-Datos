@@ -10,7 +10,7 @@ EXEC :b_fecha_proceso := TO_CHAR(SYSDATE, 'DDMMYYYY');
 
 /*
 ================================================================================
-BLOQUE PL/SQL ANÓNIMO - GENERACIÓN DE CREDENCIALES
+GENERACIÓN DE CREDENCIALES
 ================================================================================
 */
 DECLARE
@@ -295,3 +295,4 @@ ORDER BY id_emp;
 -- Contar total de credenciales generadas
 SELECT COUNT(*) AS "TOTAL_CREDENCIALES_GENERADAS"
 FROM usuario_clave;
+
