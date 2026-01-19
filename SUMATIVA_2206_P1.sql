@@ -63,7 +63,7 @@ DECLARE
     
 BEGIN
 
-    -- Convertir variable BIND VARCHAR2 a DATE
+    -- Convertir variable 
     v_fecha_proceso := TO_DATE(:b_fecha_proceso, 'DDMMYYYY');
     
     DBMS_OUTPUT.PUT_LINE('========================================');
@@ -72,7 +72,7 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('========================================');
     DBMS_OUTPUT.PUT_LINE(' ');
     
-    -- Ciclo principal: procesar empleados desde ID 100 hasta 320
+    -- Procesar empleados desde ID 100 hasta 320
     WHILE v_id_empleado <= v_id_final LOOP
         
         BEGIN
@@ -125,7 +125,6 @@ BEGIN
             
             -- Calcular años trabajados
             -- Calcula la antigüedad del empleado usando v_fecha_proceso
-            -- y redondeando a enteros con TRUNC según requerimiento
             v_anios_trabajados := TRUNC(MONTHS_BETWEEN(v_fecha_proceso, v_fecha_contrato) / 12);
             
             -- Determinar marca de antigüedad
@@ -136,7 +135,7 @@ BEGIN
                 v_marca_antiguedad := '';
             END IF;
             
-            -- Concatenar componentes del nombre de usuario
+            -- Unir componentes
             v_nombre_usuario := v_letra_estado ||           -- a) Letra estado civil
                                 v_tres_letras_nombre ||     -- b) Tres letras nombre
                                 v_largo_nombre ||           -- c) Largo nombre
@@ -295,4 +294,5 @@ ORDER BY id_emp;
 -- Contar total de credenciales generadas
 SELECT COUNT(*) AS "TOTAL_CREDENCIALES_GENERADAS"
 FROM usuario_clave;
+
 
